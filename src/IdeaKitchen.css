@@ -1,0 +1,70 @@
+/* A playful editorial idea kitchen: bold type, collage and a living golden pour. */
+.idea-kitchen{background:#f2efdf;color:#242820;padding:70px 6%;overflow:hidden}
+.kitchen-heading{max-width:1200px;margin:auto auto 35px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.kitchen-eyebrow{display:flex;align-items:center;gap:9px;font-size:9px;font-weight:700;letter-spacing:1.4px}.kitchen-eyebrow>span{width:7px;height:7px;background:#ac8451;border-radius:50%}
+.kitchen-heading h2{font-family:'Manrope',sans-serif;font-size:clamp(45px,6.8vw,92px);font-weight:800;line-height:1;letter-spacing:-5px;position:relative;margin:25px 0 0}
+.kitchen-heading h2>span{font-family:Georgia,serif;font-style:italic;font-weight:400;color:#a27d43;letter-spacing:-3px}
+.kitchen-title-doodle{position:absolute;right:-90px;top:0;width:62px;height:62px;color:#bca7df;transform:rotate(12deg)}
+.kitchen-heading>p{font-size:13px;line-height:1.8;color:#747365;margin:0 0 6px}.kitchen-heading>p strong{display:block;margin-top:15px;font-size:11px;color:#242820;font-weight:600}
+.kitchen-stage{display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%);max-width:1200px;margin:auto;border:1px solid #292a20;border-radius:4px;box-shadow:7px 7px 0 #292a20;overflow:hidden}
+.kitchen-collage{position:relative;height:490px;background:#e2bf60;overflow:hidden;border-right:1px solid #292a20;isolation:isolate}
+.kitchen-orbit{position:absolute;border:1px solid #25291d20;border-radius:50%;width:90%;height:85%;left:5%;top:10%;transform:rotate(-20deg);z-index:-1}.orbit-b{transform:rotate(28deg) scaleX(.65)}
+.kitchen-scientist{position:absolute;display:block;left:-4%;top:4%;width:89%;height:91%;object-fit:contain;object-position:left top;transform-origin:70% 45%;animation:kitchen-character 6s ease-in-out infinite alternate;filter:drop-shadow(8px 6px 0 #422f1822)}
+.kitchen-pour{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.kitchen-liquid-highlight{animation:kitchen-pour-flow 2.4s linear infinite}
+@keyframes kitchen-pour-flow{to{stroke-dashoffset:-90}}
+.kitchen-liquid-surface{animation:kitchen-slosh 3s ease-in-out infinite alternate;transform-origin:290px 420px}
+@keyframes kitchen-slosh{to{transform:rotate(3deg) translateY(3px)}}
+.kitchen-bubble{animation:kitchen-bubble-rise 2s ease-in-out infinite}
+@keyframes kitchen-bubble-rise{0%{opacity:0;transform:translateY(0)}25%{opacity:1}100%{opacity:0;transform:translateY(-30px)}}
+@keyframes kitchen-character{to{transform:rotate(-1.5deg) translateY(2px)}}
+.kitchen-sticker{position:absolute;z-index:3;font-family:'Manrope',sans-serif;font-weight:800;line-height:1.1;letter-spacing:-.5px}
+.sticker-top{right:18px;top:25px;border:1px solid #25291d;padding:13px;background:#cdb8ea;font-size:16px;transform:rotate(8deg);box-shadow:3px 3px 0 #25291d}.sticker-top b{font-size:20px}
+.kitchen-spark{position:absolute;right:25px;top:160px;font-size:49px;line-height:1;color:#fff6dc;transform:rotate(15deg)}
+.sticker-bottom{bottom:26px;left:20px;background:#f5efdc;padding:10px 12px;display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.5px;border:1px solid #292a20;transform:rotate(-4deg);box-shadow:3px 3px 0 #292a20;max-width:70%;animation:kitchen-sticker-in .45s ease both}
+@keyframes kitchen-sticker-in{from{opacity:0;transform:rotate(-8deg) scale(.9)}to{opacity:1;transform:rotate(-4deg) scale(1)}}
+.kitchen-handnote{position:absolute;bottom:94px;right:12px;font:italic 16px Georgia,serif;transform:rotate(-12deg);color:#493c21}
+.kitchen-copy{position:relative;display:flex;flex-direction:column;padding:30px 36px 26px;background:#242820;color:#f3eddb;min-width:0}
+.kitchen-copy-top{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:8px;letter-spacing:1.5px;color:#bbb8a7}
+.kitchen-counter{font-size:26px;font-weight:700;letter-spacing:-1px;color:#e2bf60;white-space:nowrap}.kitchen-counter i{font-style:normal;font-size:10px;letter-spacing:1px;color:#b0b29e}
+.kitchen-current{margin:auto 0;min-width:0;animation:kitchen-copy-in .45s ease both}
+@keyframes kitchen-copy-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.kitchen-ingredient{display:flex;align-items:center;gap:7px;color:#cbb6e9;font-size:8px;font-weight:600;letter-spacing:1px;margin-bottom:20px}
+.kitchen-current h3{font-family:'Manrope',sans-serif;font-size:clamp(29px,3.4vw,48px);font-weight:800;line-height:1.08;letter-spacing:-1.8px;margin:0 0 22px;color:#fff8e5}
+.kitchen-current h3 span{color:#e6c46c}
+.kitchen-current p{font-size:13px;line-height:1.8;margin:0;max-width:390px;color:#cfcebd}
+.kitchen-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px}
+.kitchen-actions>a{display:inline-flex;align-items:center;justify-content:space-between;gap:15px;padding:13px 16px;background:#e2bf60;color:#26291e;font-size:11px;font-weight:700;border-radius:3px;transition:background .2s}.kitchen-actions>a:hover{background:#efcf7c}
+.kitchen-actions>div{display:flex;gap:5px}.kitchen-actions button{display:grid;place-items:center;width:31px;height:31px;border:1px solid #727563;border-radius:50%;background:transparent;color:#e1dfcb}
+.kitchen-progress{position:absolute;left:0;right:0;bottom:0;height:3px;background:#ffffff0c}.kitchen-progress>span{display:block;height:100%;width:100%;background:#cdb8ea;transform:scaleX(0);transform-origin:left;animation:kitchen-timer 5.5s linear forwards}
+@keyframes kitchen-timer{to{transform:scaleX(1)}}
+.kitchen-paused .kitchen-progress>span,.kitchen-paused .kitchen-scientist,.kitchen-paused .kitchen-liquid-highlight,.kitchen-paused .kitchen-liquid-surface,.kitchen-paused .kitchen-bubble{animation-play-state:paused}
+.kitchen-bottom{max-width:1200px;margin:28px auto 0}.kitchen-bottom>span{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#7c7968}
+.kitchen-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.kitchen-tabs button{display:flex;align-items:center;gap:8px;border:1px solid #c6c3b1;background:transparent;border-radius:30px;padding:9px 13px;font-size:10px;color:#6d6e5e;transition:background .2s,color .2s}.kitchen-tabs button>span{font-size:8px;color:#9f8358}.kitchen-tabs button[aria-pressed=true]{background:#26291e;color:#f3eddb;border-color:#26291e}.kitchen-tabs button[aria-pressed=true]>span{color:#e2bf60}
+@media(max-width:1000px){.kitchen-heading h2{font-size:62px;letter-spacing:-3px}.kitchen-heading h2>span{letter-spacing:-2px}.kitchen-title-doodle{width:43px;right:-55px}.kitchen-heading>p{font-size:11px}.kitchen-copy{padding:25px}.kitchen-actions{flex-wrap:wrap}.kitchen-collage{height:490px}.kitchen-current h3{font-size:35px}}
+@media(max-width:700px){
+ .idea-kitchen{padding:42px 5% 35px}.kitchen-heading{display:block;margin-bottom:24px}.kitchen-eyebrow{font-size:7px;letter-spacing:1px}.kitchen-heading h2{font-size:clamp(43px,10.7vw,65px);letter-spacing:-2.4px;margin:19px 0 0}.kitchen-heading h2>span{letter-spacing:-1.9px}.kitchen-title-doodle{width:36px;height:36px;right:4%;top:-4px}
+ .kitchen-heading>p{font-size:11px;line-height:1.7;margin-top:20px;display:none}
+ .kitchen-stage{grid-template-columns:minmax(0,44%) minmax(0,56%);box-shadow:4px 4px 0 #292a20}
+ .kitchen-collage{height:390px}.kitchen-copy{padding:18px 13px}
+ .kitchen-copy-top>span:first-child{font-size:5px;letter-spacing:.9px;max-width:65px;line-height:1.7}.kitchen-counter{font-size:21px}.kitchen-counter i{font-size:7px}
+ .kitchen-current{padding:20px 0}.kitchen-ingredient{font-size:5px;letter-spacing:.5px;gap:4px;margin-bottom:15px}.kitchen-ingredient svg{width:9px;flex-shrink:0}
+ .kitchen-current h3{font-size:clamp(20px,5.5vw,30px);line-height:1.1;letter-spacing:-.7px;margin-bottom:15px}.kitchen-current p{font-size:10px;line-height:1.7}
+ .kitchen-actions{margin-top:0;gap:12px}.kitchen-actions>a{padding:9px 8px;font-size:8px;gap:6px;width:100%}.kitchen-actions>a svg{width:13px}.kitchen-actions>div{width:100%;justify-content:space-between}.kitchen-actions button{width:26px;height:26px}.kitchen-actions button svg{width:12px}
+ .kitchen-scientist{width:145%;max-width:none;left:-31%;height:70%;top:18%;object-position:center top}
+ .sticker-top{right:10px;top:18px;padding:8px;font-size:10px;box-shadow:2px 2px 0 #25291d}.sticker-top b{font-size:13px}
+ .kitchen-spark{font-size:28px;right:9px;top:125px}
+ .kitchen-pour{left:-18%;width:125%;height:72%;top:21%}
+ .sticker-bottom{bottom:17px;left:10px;font-size:6px;letter-spacing:.2px;padding:7px;max-width:85%;gap:4px}.sticker-bottom svg{width:10px}
+ .kitchen-handnote{font-size:11px;bottom:68px;right:7px;max-width:90px}
+ .kitchen-bottom{margin-top:23px}.kitchen-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:#b4935b transparent;gap:7px}.kitchen-tabs button{flex-shrink:0;font-size:9px;padding:9px 12px}
+}
+@media(prefers-reduced-motion:reduce){.kitchen-scientist,.kitchen-liquid-highlight,.kitchen-liquid-surface,.kitchen-bubble,.kitchen-progress>span,.kitchen-current,.sticker-bottom{animation:none}}
+
+/* Keep the cutout inside its own scene at every breakpoint. */
+.kitchen-stage{width:100%;box-sizing:border-box}
+.kitchen-collage{min-width:0;width:100%}
+.kitchen-scientist{left:-6%;top:0;object-position:center center}
+.kitchen-copy{overflow:hidden}
+.kitchen-pour{max-width:100%;left:0;width:100%;top:0;height:100%}
+@media(max-width:700px){.kitchen-collage{aspect-ratio:auto!important;height:410px;max-height:410px!important}.kitchen-scientist{left:-4%;top:-8%;object-position:center center;filter:drop-shadow(4px 4px 0 #422f1822)}.kitchen-pour{top:19%;left:0;height:75%;width:100%}.kitchen-handnote{right:5px;bottom:65px;font-size:10px}.kitchen-current{padding:20px 0;min-height:200px}.kitchen-current h3{overflow-wrap:normal}.sticker-top{top:18px;right:8px}.kitchen-spark{top:120px}}
