@@ -1,0 +1,5 @@
+Built-in image generation was used for both assets.
+
+Pouring character: Photorealistic transparent cutout of a quirky Indian creative scientist, glasses, ivory rolled-sleeve shirt, brown waistcoat, leaning forward and tilting a beaker of golden liquid toward the lower right. Warm cinematic amber lighting, expressive face, anatomically accurate hands, no text or background.
+
+Logo: Remove only the black background and outer empty space from the supplied StoryLab director-and-megaphone logo. Preserve STORYLAB and BY DEVANSH lettering, gold coloration, proportions, and silhouette. Real alpha transparency.
