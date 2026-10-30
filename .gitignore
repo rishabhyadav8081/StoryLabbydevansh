@@ -4,3 +4,5 @@ dist/
 
 .env
 .openai/*.json.tmp
+
+node_modules
