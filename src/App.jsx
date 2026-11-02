@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, ArrowDown, Play, Pause, Plus, Minus, Menu, X, Check, MoveUpRight } from 'lucide-react';
 import './styles.css';
+import ConsentControls from './ConsentControls.jsx';
+import {saveEnquiry} from './enquiryTracking.js';
 
 const media = '/media/';
 const projects = [
@@ -48,10 +50,13 @@ export default function App(){
  const [menu,setMenu]=useState(false),[chosen,setChosen]=useState(''),[draft,setDraft]=useState(null),[sending,setSending]=useState(false),[sheetStatus,setSheetStatus]=useState('');
  const [logosPaused,setLogosPaused]=useState(false);
  const reelRail=useRef(null);
+ const submitLock=useRef(false);
+ const savedPayload=useRef(null);
  useEffect(()=>{const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));return()=>observer.disconnect()},[]);
 
  async function submit(e){
   e.preventDefault();
+  if(submitLock.current || !e.currentTarget.reportValidity())return;
   const data=Object.fromEntries(new FormData(e.currentTarget));
   data.budget = Number(data.budget.replace(/,/g, ''));
   if(!Number.isFinite(data.budget) || data.budget < 5000){
@@ -65,18 +70,22 @@ export default function App(){
   setDraft(`https://wa.me/919919372651?text=${encodeURIComponent(text)}`);
   const endpoint=import.meta.env.VITE_GOOGLE_SHEETS_URL;
   if(!endpoint){setSheetStatus('Your enquiry is ready to send on WhatsApp.');return}
+  const payload={...data,budget:String(data.budget)};
+  const fingerprint=JSON.stringify(payload);
+  if(savedPayload.current===fingerprint){setSheetStatus('This enquiry has already been saved. You can continue on WhatsApp.');return;}
+  submitLock.current=true;
+  const eventId=crypto.randomUUID();
   setSending(true);setSheetStatus('Saving your enquiry…');
   try{
-   const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({...data,budget:String(data.budget)})});
-   const result=await response.json();
-   if(!response.ok||!result.success)throw new Error('Save failed');
+   await saveEnquiry(endpoint,payload,eventId);
+   savedPayload.current=fingerprint;
    setSheetStatus('Thank you! Your enquiry has been received. You can also continue on WhatsApp.');
   }catch{setSheetStatus('We could not confirm your enquiry was saved. Please send it on WhatsApp below.');}
-  finally{setSending(false)}
+  finally{submitLock.current=false;setSending(false)}
  }
 
  return <>
-
+ <ConsentControls/>
  <a className="skip-link" href="#work">Skip to content</a>
  <div className="reading-progress" aria-hidden="true"/><header className="header"><Brand/><nav aria-label="Main navigation" className="desktop-nav"><a href="#work">Selected work</a><a href="#services">Our services</a><a href="#reels">Our reels</a></nav><a className="header-cta" href="#contact">Let’s talk <ArrowUpRight size={17}/></a><button className="menu-toggle" aria-label={menu?'Close menu':'Open menu'} aria-expanded={menu} onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
  {menu&&<nav className="mobile-nav" aria-label="Mobile navigation">{[['Selected work','work'],['Our services','services'],['Our reels','reels'],['Let’s talk','contact']].map(([label,id])=><a key={id} href={`#${id}`} onClick={()=>setMenu(false)}>{label}<ArrowUpRight/></a>)}</nav>}

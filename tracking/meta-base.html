@@ -1,0 +1,15 @@
+<script>
+(function(w,d){
+ if(!w.storylabConsent || w.storylabConsent.get()!=='accepted')return;
+ if(w.__storylabMetaInitialized)return;
+ if(!w.fbq){
+  var n=w.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments);};
+  if(!w._fbq)w._fbq=n;n.push=n;n.loaded=true;n.version='2.0';n.queue=[];
+  var s=d.createElement('script');s.async=true;s.src='https://connect.facebook.net/en_US/fbevents.js';d.head.appendChild(s);
+ }
+ w.fbq('consent','grant');
+ w.fbq('init','1680985060372155');
+ w.__storylabMetaInitialized=true;
+ w.fbq('trackSingle','1680985060372155','PageView');
+})(window,document);
+</script>

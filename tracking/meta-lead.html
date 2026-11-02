@@ -1,0 +1,11 @@
+<script>
+(function(w){
+ if(!w.storylabConsent || w.storylabConsent.get()!=='accepted')return;
+ var id={{DLV - event_id}};
+ if(typeof id!=='string'||!id||!w.__storylabMetaInitialized||typeof w.fbq!=='function')return;
+ var seen=w.__storylabMetaLeads||(w.__storylabMetaLeads={});
+ if(seen[id])return;
+ seen[id]=true;
+ w.fbq('trackSingle','1680985060372155','Lead',{}, {eventID:id});
+})(window);
+</script>
