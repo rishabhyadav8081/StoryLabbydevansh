@@ -1,0 +1,243 @@
+.studio-views {
+  margin: clamp(30px, 5vw, 76px) 14px 0;
+  padding: clamp(36px, 6vw, 92px) 5%;
+  border-radius: 10px;
+  background: #172a21;
+  color: var(--paper);
+}
+
+.studio-views-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .85fr);
+  gap: clamp(28px, 7vw, 110px);
+  align-items: center;
+}
+
+.studio-views-stat .eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  color: #ddc69a;
+}
+
+.studio-views-stat h2 {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  font-size: clamp(24px, 3vw, 42px);
+  letter-spacing: -.04em;
+}
+
+.studio-views-stat strong {
+  color: #ddc69a;
+  font: 400 clamp(88px, 13vw, 200px)/.95 Georgia, serif;
+  letter-spacing: -.08em;
+  white-space: nowrap;
+}
+
+.studio-views-copy {
+  border-left: 1px solid #d6ba8c55;
+  padding-left: clamp(24px, 4vw, 64px);
+}
+
+.studio-views-copy p {
+  margin: 0 0 18px;
+  font-size: clamp(24px, 3.1vw, 46px);
+  line-height: 1.17;
+}
+
+.studio-views-copy small {
+  display: block;
+  max-width: 42ch;
+  color: #c0c9be;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.studio-universes h2,
+.studio-services h2 {
+  margin: 0;
+}
+
+.studio-universes h2 em,
+.studio-services h2 em {
+  color: #53694c;
+}
+
+.studio-universes-intro {
+  color: var(--muted);
+  margin: 12px 0 28px;
+}
+
+.studio-universe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 28px);
+}
+
+.studio-universe {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid #cdd1c3;
+  border-radius: 16px;
+  background: #f7f5ee;
+  box-shadow: 0 8px 24px #172a210b;
+}
+
+.studio-universe-media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  background: #172a21;
+}
+
+.studio-universe-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.studio-universe-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(16px, 2vw, 30px);
+}
+
+.studio-universe-copy .eyebrow {
+  color: #53694c;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+
+.studio-universe h3 {
+  margin: 8px 0;
+  font: 400 clamp(26px, 3.3vw, 50px)/1.05 Georgia, serif;
+  letter-spacing: -.045em;
+}
+
+.studio-universe p {
+  margin: 0 0 20px;
+  max-width: 36ch;
+  color: #545b4f;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.studio-universe-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid #d6d9cc;
+}
+
+.studio-universe-link,
+.studio-universe-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  border-radius: 30px;
+}
+
+.studio-universe-link {
+  padding: 0 clamp(9px, 1vw, 15px);
+  background: #26392e;
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.studio-universe-link::after {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  content: '';
+}
+
+.studio-universe-link:hover {
+  background: #3c5746;
+}
+
+.studio-universe-play {
+  position: relative;
+  width: 44px;
+  flex: none;
+  border: 1px solid #bdc4b3;
+  background: transparent;
+}
+
+.studio-universe-play:hover {
+  background: #e2e7db;
+}
+
+.studio-services {
+  background: #e6e8dd;
+}
+
+.studio-service-list {
+  border-top: 1px solid #a7ae9d;
+  margin: clamp(22px, 3vw, 44px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.studio-service-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(16px, 2vw, 28px) 0;
+  border-bottom: 1px solid #a7ae9d;
+}
+
+.studio-service-list h3 {
+  margin: 0 0 6px;
+  font: 400 clamp(21px, 2.65vw, 36px)/1.12 Georgia, serif;
+  letter-spacing: -.028em;
+}
+
+.studio-service-list p {
+  margin: 0;
+  color: #545b4f;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 64ch;
+}
+
+.studio-service-list a {
+  gap: 8px;
+  min-height: 44px;
+}
+
+@media (max-width: 840px) {
+  .studio-views {
+    margin-inline: 8px;
+    padding-inline: 6%;
+  }
+
+  .studio-views-inner,
+  .studio-universe-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .studio-views-copy {
+    border-left: 0;
+    border-top: 1px solid #d6ba8c55;
+    padding: 24px 0 0;
+  }
+
+  .studio-universe h3 {
+    font-size: 38px;
+  }
+
+  .studio-service-list li {
+    gap: 12px;
+  }
+}
